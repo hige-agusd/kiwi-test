@@ -1,0 +1,8 @@
+.screen {
+    background-color: #565e30;
+    border-radius: 6px;
+    height: 45%;
+    margin-top: 5%;
+    font-family: 'Press Start 2P', 'Roboto', cursive;
+    position: relative;
+}

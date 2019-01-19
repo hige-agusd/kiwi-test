@@ -1,0 +1,23 @@
+.message {
+    height: 85%;
+    width: 95%;
+    z-index: 0;
+}
+
+.message::after {
+    box-shadow: 0 -4px #565e30, 0 -8px, 4px 0 #565e30, 4px -4px, 8px 0, 0 4px #565e30, 0 8px, -4px 0 #565e30, -4px 4px, -8px 0, -4px -4px, 4px 4px;
+}
+
+.message .title {
+    background-color: #565e30!important;
+    margin-top: -20px!important;
+}
+
+.text {
+    background: transparent;
+    border: none;
+    height: 90%;
+    outline: none;
+    resize: none;
+    width: 90%;
+}

@@ -1,0 +1,13 @@
+.five-way-btn {
+    background-color: #ccc;
+    border-radius: 15px;
+    margin-top: -25px;
+    padding-left: 10px;
+}
+
+.five-way-btn .arrow {
+}
+
+.five-way-btn .row .col-xs-4:first-child {
+    margin-right: -2px;
+}

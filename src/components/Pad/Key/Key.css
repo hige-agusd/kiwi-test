@@ -1,0 +1,19 @@
+.key {
+    background-color: #ccc;
+    border-radius: 2px;
+    height: 35px;
+    margin: 2%;
+    width: 29%;
+}
+.key.no-chars {
+    padding-top: 3%;
+}
+.key .chars {
+    display: block;
+    font-size: 9px;
+}
+.key .number {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+}

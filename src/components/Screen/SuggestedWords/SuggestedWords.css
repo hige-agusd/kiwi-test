@@ -1,0 +1,35 @@
+.words-wrapper {
+    background: #666;
+    display: grid;
+    height: 100%;
+    left: 0;
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    vertical-align: middle;
+    width: 100%;
+    z-index: 400;
+} 
+
+.suggested-words {
+    background-color: #565e30;
+    border: 2px solid black;
+    margin: auto;
+    max-height: 70%;
+    overflow: scroll;
+    width: 80%;
+    /* z-index: 600; */
+}
+
+.selected {
+    background-color: black;
+    color: white;
+}
+
+.long-words {
+    font-size: 11px;
+}
+
+.longest-words {
+    font-size: 9px;
+}
