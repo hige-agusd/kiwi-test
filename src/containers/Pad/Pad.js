@@ -10,17 +10,19 @@ class Pad extends Component {
     state = { words: null, digits: '' };
 
     setText = digit => {
-        this.setState({...this.state, digits: ''});
+        const newDigit = (digit > 0) ? digit : '';
+        this.setState({ ...this.state, digits: newDigit });
         this.props.setText(digit);
     }
 
     getWords = (digit) => {
         switch (digit) {
+            case -1: this.setText(digit); break;
             case 0: this.setText(digit); break;
-            case 1: this.setText(digit); 
+            case 1: this.setText(digit);
                 this.props.getWords(digit);
                 break;
-            default: let digits = this.state.digits + digit;
+            default: let digits = `${this.state.digits}${digit}`;
                 this.setState({ ...this.state, digits: digits });
                 this.props.getWords(digits);
         }
@@ -45,7 +47,7 @@ class Pad extends Component {
     render() {
         return (
             <Grid fluid={true} className={'pad'}>
-                <Navbar fnc={this.moveCursor} selected={this.props.selected} />
+                <Navbar fnc={this.moveCursor} ok={this.getWords} selected={this.props.selected} />
                 <Numpad fnc={this.getWords} />
             </Grid>
         );

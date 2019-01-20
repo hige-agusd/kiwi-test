@@ -20,7 +20,9 @@ const setSelectedWord = (state, action) => {
 const setText = (state, action) => {
     let retState = state;
     switch (action.digit) {
-        case 0: retState = addText(state); break;
+        case 0: retState = addText(state); 
+        retState.text += ' ';
+        break;
         case 1: retState = addText(state); break;
         default: retState = addText(state);
     }

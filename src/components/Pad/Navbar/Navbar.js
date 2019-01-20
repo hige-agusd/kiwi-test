@@ -16,7 +16,7 @@ const navbar = (props) => {
         <Grid className={'row navbar'} >
             <Row >
                 <Key chars={''} clicked={callBtn} glyph={'earphone'} />
-                <FiveWayButton selected={props.selected} fnc={props.fnc}/>
+                <FiveWayButton selected={props.selected} ok={props.ok} fnc={props.fnc}/>
                 <Key chars={''} clicked={smsBtn} glyph={'envelope'} />
             </Row>
         </Grid>

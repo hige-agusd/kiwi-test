@@ -16,7 +16,7 @@ const suggestedWords = (props) => {
             <div className={'words-wrapper'}>
                 <Grid fluid={true} className={'suggested-words'}>
                     {groupedWords.map((wordsGroup, row) => (
-                        <Row className={longWords}>
+                        <Row className={longWords} key={row} >
                             {wordsGroup.map((word, col) => {
                                 const isSelected = (props.selected[0] === row && props.selected[1] === col) ? 'selected' : '';
                                 return <Col xs={4} className={isSelected} key={word}>{word}</Col>

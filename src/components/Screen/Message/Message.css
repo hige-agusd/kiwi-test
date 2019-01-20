@@ -5,7 +5,7 @@
 }
 
 .message::after {
-    box-shadow: 0 -4px #565e30, 0 -8px, 4px 0 #565e30, 4px -4px, 8px 0, 0 4px #565e30, 0 8px, -4px 0 #565e30, -4px 4px, -8px 0, -4px -4px, 4px 4px;
+    box-shadow: 0 -4px #565e30, 0 -8px, 4px 0 #565e30, 4px -4px, 8px 0, 0 4px #565e30, 0 8px, -4px 0 #565e30, -4px 4px, -8px 0, -4px -4px, 4px 4px!important;
 }
 
 .message .title {
