@@ -5,19 +5,12 @@ import {Grid, Row} from 'react-bootstrap';
 import './Navbar.css';
 
 const navbar = (props) => {
-    const callBtn = () => {
-        console.log('call');
-    };
-    const smsBtn = () => {
-        console.log('SMS');
-    }
-    
-    return (
+     return (
         <Grid className={'row navbar'} >
             <Row >
-                <Key chars={''} clicked={callBtn} glyph={'earphone'} />
+                <Key chars={''} clicked={() => props.options('dict')} glyph={'earphone'} />
                 <FiveWayButton selected={props.selected} ok={props.ok} fnc={props.fnc}/>
-                <Key chars={''} clicked={smsBtn} glyph={'envelope'} />
+                <Key chars={''} clicked={() => props.options('')} glyph={'envelope'} />
             </Row>
         </Grid>
         );

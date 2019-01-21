@@ -1,5 +1,7 @@
 var express = require('express');
 var app = express();
+const dict = require('./dict.js');
+
 const digitToChar = [
   [' '],
   [',','.','!','?'],
@@ -23,12 +25,39 @@ const t9Translator = (digits) => {
     return combinations;
   });
 };
+
+const t9dictTranslator = digits => {
+  if (!digits || !digits.length ) return [];
+  if (digits === '1') return digitToChar[digits];
+  const retVal = [];
+  const combinations = t9Translator(digits);
+  for(let i = 0; i<combinations.length; i++) {
+    let slice = {...dict.dict};
+    for(let j = 0; j<combinations[i].length; j++) {
+      if(slice.hasOwnProperty(combinations[i][j])) {
+        slice = slice[combinations[i][j]];
+      } else {
+        slice = {};
+        break;
+      }
+    }
+    if(slice.hasOwnProperty('$') || slice === 0) {
+      retVal.push(combinations[i]);
+    }
+  }
+  return retVal;
+}
+
 app.get('/', function (req, res) {
   res.send('Hello World!');
 });
 
-app.get('/t9/:param', function (req, res) {
-  res.send(t9Translator(req.params.param));
+app.get('/t9/:digits', function (req, res) {
+  res.send(t9Translator(req.params.digits));
+});
+
+app.get('/t9dict/:digits', (req, res) => {
+  res.send(t9dictTranslator(req.params.digits));
 });
 
 app.listen(3003, function () {

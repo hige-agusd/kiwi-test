@@ -3,4 +3,7 @@ export {
     getWords,
     moveCursor,
     setText,
+    setMode,
+    backspace,
+    clear,
 } from './actions';
