@@ -7,7 +7,6 @@ const suggestedWords = (props) => {
     let wordsList = null;
     if (props.words) {
         const propsWords = [...props.words];
-        console.log(propsWords)
         const wordsListLength = propsWords.length;
         const longWords = propsWords[0] && propsWords[0].length > 5 ? (propsWords[0].length > 8) ? 'longest-words' : 'long-words' : '';
         const scrollStep = propsWords[0] && propsWords[0].length > 5 ? (propsWords[0].length > 8) ? 13 : 16 : 24;

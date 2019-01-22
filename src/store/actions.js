@@ -42,7 +42,6 @@ export const moveCursor = direction => {
 };
 
 export const getWords = (digits, mode) => {
-    console.log(digits);
     return dispatch => {
         axios.get(`http://localhost:3003/t9${mode}/${digits}` )
             .then(res => {
