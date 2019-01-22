@@ -35,11 +35,11 @@ class Pad extends Component {
             case -1: this.setText(digit); break;
             case 0: this.setText(digit); break;
             case 1: this.setText(digit);
-                this.props.getWords(digit, this.props.mode);
+                this.debGetWords(digit, this.props.mode);
                 break;
             default: let digits = `${this.state.digits}${digit}`;
                 this.setState({ ...this.state, digits: digits }, () => {
-                    this.props.getWords(digits, this.props.mode);
+                    this.debGetWords(digits, this.props.mode);
                 });
         }
     };
@@ -62,6 +62,21 @@ class Pad extends Component {
             this.props.moveCursor(selected);
         }
     }
+
+    debounced = (fn, delay, ...args) => {
+        let timerId;
+        return (...args) => {
+          if (timerId) {
+            clearTimeout(timerId);
+          }
+          timerId = setTimeout(() => {
+            fn(...args);
+            timerId = null;
+          }, delay);
+        }
+      };
+
+      debGetWords = this.debounced(this.props.getWords, 200);
 
     render() {
         return (
