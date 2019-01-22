@@ -1,5 +1,7 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const cors = require('cors');
+const app = express();
+app.use(cors());
 const dict = require('./dict.js');
 
 const digitToChar = [
@@ -48,11 +50,11 @@ const t9dictTranslator = digits => {
   return retVal;
 }
 
-app.get('/', function (req, res) {
+app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-app.get('/t9/:digits', function (req, res) {
+app.get('/t9/:digits', (req, res) => {
   res.send(t9Translator(req.params.digits));
 });
 
@@ -60,6 +62,6 @@ app.get('/t9dict/:digits', (req, res) => {
   res.send(t9dictTranslator(req.params.digits));
 });
 
-app.listen(3003, function () {
+app.listen(3003, () => {
   console.log('T9 server listening on port 3003!');
 });
