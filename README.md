@@ -17,52 +17,20 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.<br>
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Server setup
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To setup the server go to the `server/` folder located at the same level than `src/` and perform an `npm install`. 
+Once the installation process is finished, run `node app.js` in the same folder. The server will start listening on port `3003`.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+# App overview
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+I've implemented both filtered an unfiltered words. 
+For filtered words, it´ll need exact matches, otherwise a message stating that no matches were found will be shown.
 
-### `npm run eject`
+Once that suggested words appear on the screen you can use the 5-way button on the screen to navigate them and select one.
+Punctuation and space (Keys number 1 and 0 respectively) will also select the currently highlighted word, and proceed to show the possible punctuation marks or add a space, accordingly.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The navigation keys are the 5-way button and the 2 keys on each side of it. They are used to execute the options shown in the contextual menu (that is, what's shown at the bottom of the screen).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+You can use the buttons with the phone and envelope icons to switch modes (filtered or 'dict' / unfiltered or 'T9') at any time, following the options in the aforementioned contextual menu.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
